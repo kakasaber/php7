@@ -38,3 +38,49 @@ function add(int $x,  int $y)
 var_dump(add('2',3));
 
 ?>
+
+
+<?php 
+   //6. 匿名类
+   // php7允许new class {} 创建一个匿名的对象。
+class Logger
+{
+     public function log($msg)
+     {
+     	echo $msg;
+     }
+
+}
+
+//$util->setLogger(new Logger());
+
+//php+
+new class{
+
+	public function log($msg)
+	{
+		echo $msg;
+	}
+}
+
+?>
+
+
+
+<?php
+echo "\u{aa}";// ª
+echo "\u{0000aa}";// ª
+echo "\u{9999}";// 香
+?>
+
+
+<?php
+	echo "<br/>";
+	class A{private  $x= 1;}
+
+	$getXCB =function (){return $this->x;}
+
+	$getX = $getXCB->bindTo(new A,'A');
+
+	echo $getx();
+?>
